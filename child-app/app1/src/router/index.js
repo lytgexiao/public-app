@@ -7,16 +7,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'ep',
-    redirect: '/home',
-    component: HomeView,
-    children: [
-      {
-        path: '/home/:id?',
-        name: 'home',
-        component: HomeView
-      },
-    ]
+    name: 'home',
+    component: HomeView
   },
   {
     path: '/about',
@@ -29,6 +21,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
